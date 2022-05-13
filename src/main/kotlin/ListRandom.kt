@@ -43,7 +43,7 @@ class ListRandom {
     }
 
     fun deserialize(file: File) {
-        
+
     }
 }
 
