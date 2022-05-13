@@ -3,6 +3,7 @@ import java.io.File
 
 fun main() {
     val file = File("out.txt")
+
     //Nodes creation
     val node1 = ListNode()
     node1.data = "one"
@@ -14,6 +15,7 @@ fun main() {
     node4.data = "four"
     val node5 = ListNode()
     node5.data = "five"
+
     //Nodes connection
     node1.next = node2
     node2.prev = node1
@@ -23,14 +25,23 @@ fun main() {
     node4.prev = node3
     node4.next = node5
     node5.prev = node4
+
     //Random connections
+    node1.rand = node5
     node2.rand = node5
     node3.rand = node1
     node4.rand = node4
+
     //List creation
     val nodeList = ListRandom()
     nodeList.head = node1
     nodeList.tail = node5
+
     //Serialization
     nodeList.serialize(file)
+
+    //Deserialization
+//    val nodeListD = ListRandom()
+//    nodeListD.deserialize(file)
+//    nodeListD.serialize(File("test.txt"))
 }

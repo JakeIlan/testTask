@@ -1,9 +1,11 @@
-1 one
-2 two
-3 three
-4 four
-5 five
-nodes_end
+5
+one
+two
+three
+four
+five
+1 5
 2 5
 3 1
 4 4
+end
