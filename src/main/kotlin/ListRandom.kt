@@ -95,21 +95,33 @@ class ListRandom {
         }
 
         //Restoring random connections
-        val randNodes: MutableMap<ListNode?, Int> = mutableMapOf()
+        val randNodes: MutableMap<ListNode, Int> = mutableMapOf()
         count = 1
         current = head
         while (current != null) {
             if (randoms.containsKey(count)) {
-                randNodes[current] = count
+                randNodes[current] = randoms[count]!!
             }
             val subMap = randNodes.filterValues { it == count }
             for (entry in subMap) {
-                entry.key?.rand = current
+                entry.key.rand = current
             }
 
             current = current.next
+            count++
         }
-
+        current = tail
+        while (current != null) {
+            count--
+            if (randoms.containsKey(count)) {
+                randNodes[current] = randoms[count]!!
+            }
+            val subMap = randNodes.filterValues { it == count }
+            for (entry in subMap) {
+                entry.key.rand = current
+            }
+            current = current.prev
+        }
 
         reader.close()
         writer.close()

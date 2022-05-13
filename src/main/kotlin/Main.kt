@@ -41,7 +41,7 @@ fun main() {
     nodeList.serialize(file)
 
     //Deserialization
-//    val nodeListD = ListRandom()
-//    nodeListD.deserialize(file)
-//    nodeListD.serialize(File("test.txt"))
+    val nodeListD = ListRandom()
+    nodeListD.deserialize(file)
+    nodeListD.serialize(File("test.txt"))
 }
