@@ -1,4 +1,4 @@
-# Test task
+# Doubly linked list serialization and deserialization
 
 Implements serialization and deserialization processes of doubly silked list with additional random connections
 
